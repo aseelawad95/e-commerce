@@ -6,7 +6,7 @@ import 'package:e_commerce/Models/product.dart';
 import 'package:e_commerce/Screens/Products/details_screen.dart';
 import 'package:e_commerce/Screens/widgets/responsive.dart';
 import 'package:e_commerce/Screens/widgets/text_widget.dart';
-import 'package:e_commerce/Service/user_service.dart';
+import 'package:e_commerce/Core/Service/user_service.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatefulWidget {

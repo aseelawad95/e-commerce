@@ -2,10 +2,10 @@ import 'dart:collection';
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce/Screens/Auth/login_screen.dart';
-import 'package:e_commerce/Service/session.dart';
+import 'package:e_commerce/Core/Service/session.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../Models/user_model.dart';
+import '../../Models/user_model.dart';
 
 class UserService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;

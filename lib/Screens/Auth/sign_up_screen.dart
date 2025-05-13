@@ -3,7 +3,7 @@
 import 'dart:collection';
 import 'package:e_commerce/Screens/Auth/login_screen.dart';
 import 'package:e_commerce/Screens/widgets/text_widget.dart';
-import 'package:e_commerce/Service/user_service.dart';
+import 'package:e_commerce/Core/Service/user_service.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

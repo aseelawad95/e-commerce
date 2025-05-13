@@ -1,6 +1,6 @@
 import 'package:e_commerce/Screens/Auth/login_screen.dart';
 import 'package:e_commerce/Screens/Products/product_screen.dart';
-import 'package:e_commerce/Service/session.dart';
+import 'package:e_commerce/Core/Service/session.dart';
 import 'package:e_commerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
