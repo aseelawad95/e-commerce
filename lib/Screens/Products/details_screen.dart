@@ -16,7 +16,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: TextWidget(
-          text: widget.product!.title,
+          text: widget.product!.title!,
           color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 16,
@@ -94,7 +94,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
                 ...List.generate(5, (index) {
                   final rating = widget.product!.rating;
-                  if (index < rating.floor()) {
+                  if (index < rating!.floor()) {
                     return const Icon(Icons.star,
                         color: Colors.amber, size: 20);
                   } else if (index < rating && rating - index > 0.5) {

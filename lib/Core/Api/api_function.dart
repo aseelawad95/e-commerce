@@ -24,18 +24,6 @@ class ApiSender {
     );
   }
 
-  Future<Response> put(path, {dynamic data, Options? options}) async {
-    return await dio!.put(
-      '$uri$path',
-      data: jsonEncode(data),
-      options: Options(
-        headers: {
-         
-          'Accept': 'application/json',
-        },
-      ),
-    );
-  }
 
   
 }

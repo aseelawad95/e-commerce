@@ -1,9 +1,12 @@
+import 'package:e_commerce/Core/repository/productRepo.dart';
 import 'package:e_commerce/Screens/Auth/login_screen.dart';
+import 'package:e_commerce/Screens/Products/product_bloc.dart';
 import 'package:e_commerce/Screens/Products/product_screen.dart';
 import 'package:e_commerce/Core/Service/session.dart';
 import 'package:e_commerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +20,10 @@ void main() async {
 
   runApp(MyApp(
     initialScreen: (isLoggedIn == true && userEmail != null)
-        ? ProductScreen(userName: userEmail)
+        ? BlocProvider(
+      create: (context) => ProductBloc(productRepository: ProductRepository()),
+      child: ProductScreen(userName: userEmail),
+    )
         : const LoginScreen(),
   ));
 }
