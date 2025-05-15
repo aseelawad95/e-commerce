@@ -30,7 +30,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           key: formKey,
           child: Column(
             children: [
-                Image.asset('assets/images/logo.jpeg'),
+              Image.asset('assets/images/logo.jpeg'),
               const SizedBox(
                 height: 20,
               ),
@@ -74,8 +74,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   validator: (value) {
-                    if (value!.isEmpty) {
+                    if (value == null || value.isEmpty) {
                       return '* required';
+                    } else if (!emailValidator(value)) {
+                      return 'Enter a valid email';
                     }
                     return null;
                   },
@@ -117,7 +119,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ElevatedButton(
                   onPressed: () {
                     validateAndSubmit(context);
-                     Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const LoginScreen()));
                     if (formKey.currentState!.validate()) {
                       print(
                           'Login Succeeded with : ${email.text} and ${password.text} and ${name.text}');
@@ -138,7 +141,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 20,
               ),
-                 Padding(
+              Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: RichText(
                   text: TextSpan(
@@ -160,14 +163,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                             Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const LoginScreen()));
                           },
                       ),
                     ],
                   ),
                 ),
               ),
-            
             ],
           ),
         ),
